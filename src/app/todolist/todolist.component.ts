@@ -11,7 +11,9 @@ export class TodolistComponent implements OnInit {
   constructor(private data:DataService) { }
 
   ngOnInit() {
-    this.listitems=this.data.items;
+     this.data.getItem().subscribe(data => {
+       this.listitems = data
+     })
   }
   remove(i){
     this.data.items.splice(i,1);

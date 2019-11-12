@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import{ HttpClient } from '@angular/common/http';
+import {todo} from './todointerface';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +8,7 @@ import { Injectable } from '@angular/core';
 
 export class DataService{
 
-  constructor() {  }
+  constructor(private http:HttpClient) {  }
 
 
   items=[]
@@ -21,11 +23,17 @@ export class DataService{
   //     }
   // }
 
- 
-
+ additem(str:String)
+{
+  const todo = {
+    todo: str
+  }
+  this.http.post("http://localhost:4000/todo",todo).subscribe(()=>console.log("posted to database"));
+}
   getItem()
   {
-      return this.items;
+      return this.http.get<todo[]>("http://localhost:4000/todo")
+
   }
   
   delall()

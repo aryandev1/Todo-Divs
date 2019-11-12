@@ -16,7 +16,7 @@ export class TodoinputComponent implements OnInit {
  
   add()
   {
-    this.data.items.push(this.str);
+    this.data.additem(this.str);
   }
 
 }

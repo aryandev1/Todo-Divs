@@ -5,8 +5,8 @@
     </mat-card-header>
     <mat-card-content>
         <mat-list>
-            <mat-list-item *ngFor="let item of listitems;let i=index">
-                <mat-icon (click)="remove(i)">delete_outline  </mat-icon><mat-checkbox ><span> {{i}} . {{item}}</span></mat-checkbox>
+            <mat-list-item *ngFor="let item of listitems;">
+                <mat-icon (click)="remove(i)">delete_outline  </mat-icon><mat-checkbox ><span>{{item.todo}}</span></mat-checkbox>
             </mat-list-item>
         </mat-list>    
         <button mat-raised-button color="warn" (click)="removeAll()">Clear</button>

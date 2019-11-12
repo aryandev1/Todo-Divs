@@ -9,6 +9,7 @@ import { TodoinputComponent } from './todoinput/todoinput.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import{MatToolbarModule, MatCardModule, MatFormField, MatFormFieldModule, MatInputModule, MatRadioModule, MatTabsModule, MatGridListModule, MatListModule, MatBadgeModule, MatCheckboxModule, MatButtonModule, MatIconModule } from '@angular/material';
 import{FormsModule}from'@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import{FormsModule}from'@angular/forms'
     MatBadgeModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
